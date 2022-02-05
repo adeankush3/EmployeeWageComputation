@@ -5,7 +5,7 @@ namespace EmployeeWageComputation
     public class EmpWageComputation
     {
 
-        const int EmployeePresent = 0, EmployeeAbsent = 1;
+        const int EmployeePresent = 0, EmployeeAbsent = 1, WagePerHour = 20, FullDayHour = 8;
         Random ran = new Random();
 
 
@@ -16,6 +16,8 @@ namespace EmployeeWageComputation
             if (empCheck == EmployeePresent)
             {
                 Console.WriteLine("Employee is Present");
+                int CalculateDailWage = WagePerHour * FullDayHour;
+                Console.WriteLine("Employee Calculate Wage Is:-" + CalculateDailWage);
 
             }
             if (empCheck == EmployeeAbsent)
