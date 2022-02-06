@@ -7,11 +7,14 @@ namespace EmployeeWageComputation
 
         const int EmployeePresent = 0, EmployeeAbsent = 1,
             WagePerHour = 20, FullDayHour = 8,
-            PartTime = 8, WorkingDayMonth = 20;
+            PartTime = 8, WorkingDayMonth = 20, ToatlWorkingHour = 100;
         int DayHour = 0;
         int EmpHour = 0;
-        int ToatalWage = 0, ToatalMonthlyWage = 0;
+        int ToatalEmpHour = 0;
+        int ToatalWage = 0, ToatalMonthlyWage = 0, TotalWorkingDays = 0;
+        
         Random ran = new Random();
+        
         private int empCheck;
 
         public void employeeAttendence()
@@ -41,22 +44,29 @@ namespace EmployeeWageComputation
         }
         public void CalculateWage()
         {
-            switch (empCheck)
+            while (EmpHour <= WorkingDayMonth && ToatlWorkingHour < WorkingDayMonth)
             {
+                TotalWorkingDays++;
+                int empCheck = ran.Next(0, 3);
+            
+                switch (empCheck)
+                {
                 case FullDayHour:
                     this.EmpHour += FullDayHour;
                     break;
-                
-               // case PartTime:
-                //    this.EmpHour += PartTime;
-                 //   break;
+
+                //case PartTime:
+                  // this.EmpHour += PartTime;
+                   //break;
 
                 
                 default:
                     Console.WriteLine("Employee is Absent:-");
                     this.EmpHour += 0;
                     break;
+                }
             }
+            TotalWorkingDays += EmpHour;
             this.ToatalWage = EmpHour * WagePerHour;
             Console.WriteLine(this.ToatalWage);
            
