@@ -13,6 +13,7 @@ namespace EmployeeWageComputation
             Console.WriteLine("Welcome To Employee Wage Computation Problem :-");
             EmpWageComputation emp = new EmpWageComputation();
             emp.employeeAttendence();
+            emp.CalculateWage();
         }
     }
 }

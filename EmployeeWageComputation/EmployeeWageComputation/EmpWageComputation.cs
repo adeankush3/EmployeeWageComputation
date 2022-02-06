@@ -8,9 +8,11 @@ namespace EmployeeWageComputation
         const int EmployeePresent = 0, EmployeeAbsent = 1, 
             WagePerHour = 20, FullDayHour = 8, 
             PartTime = 8;
-        int DayHour = 0 , CalculateDailyWage=0;
+        int DayHour = 0;
+        int EmpHour = 0; 
+        int ToatalWage=0;
         Random ran = new Random();
-
+        private int empCheck;
 
         public void employeeAttendence()
         {
@@ -36,6 +38,27 @@ namespace EmployeeWageComputation
             {
                 Console.WriteLine("Employee is Absent");
             }
+        }
+        public void CalculateWage()
+        {
+            switch (empCheck)
+            {
+                case FullDayHour:
+                    this.EmpHour += FullDayHour;
+                    break;
+                
+                //case PartTime:
+                //this.EmpHour += PartTime;
+                // break;
+
+                
+                default:
+                    Console.WriteLine("Employee is Absent:-");
+                    this.EmpHour += 0;
+                    break;
+            }
+            this.ToatalWage = EmpHour * WagePerHour;
+            Console.WriteLine(this.ToatalWage);
         }
     }
 
