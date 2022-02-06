@@ -5,12 +5,12 @@ namespace EmployeeWageComputation
     public class EmpWageComputation
     {
 
-        const int EmployeePresent = 0, EmployeeAbsent = 1, 
-            WagePerHour = 20, FullDayHour = 8, 
-            PartTime = 8;
+        const int EmployeePresent = 0, EmployeeAbsent = 1,
+            WagePerHour = 20, FullDayHour = 8,
+            PartTime = 8, WorkingDayMonth = 20;
         int DayHour = 0;
-        int EmpHour = 0; 
-        int ToatalWage=0;
+        int EmpHour = 0;
+        int ToatalWage = 0, ToatalMonthlyWage = 0;
         Random ran = new Random();
         private int empCheck;
 
@@ -47,9 +47,9 @@ namespace EmployeeWageComputation
                     this.EmpHour += FullDayHour;
                     break;
                 
-                //case PartTime:
-                //this.EmpHour += PartTime;
-                // break;
+               // case PartTime:
+                //    this.EmpHour += PartTime;
+                 //   break;
 
                 
                 default:
@@ -59,6 +59,9 @@ namespace EmployeeWageComputation
             }
             this.ToatalWage = EmpHour * WagePerHour;
             Console.WriteLine(this.ToatalWage);
+           
+            ToatalMonthlyWage = WagePerHour * WorkingDayMonth;
+            Console.WriteLine("Employee Monthly Wage:-" + ToatalMonthlyWage);
         }
     }
 
